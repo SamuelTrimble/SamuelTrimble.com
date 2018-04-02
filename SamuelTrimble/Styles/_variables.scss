@@ -1,0 +1,22 @@
+﻿/*#region Fonts*/
+@mixin font-heading() {
+	font-family: Muli, Verdana, sans-serif;
+	font-weight: 200;
+}
+@mixin font-normal() {
+	font-family: Muli, Verdana, sans-serif;
+	font-weight: 400;
+}
+/*#endregion*/
+
+/*#region Colors*/
+$white: #FFFFFF;
+$offwhite: #F2F2F2;
+$grey: #CACACA;
+$darkgrey: #333333;
+$blue: #276CB9;
+$darkblue: #0A1B2E;
+$red: #DB3B4A;
+$offblack: #262626;
+$black: #000000;
+/*#endregion*/
