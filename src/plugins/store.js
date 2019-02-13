@@ -5,11 +5,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		mobileMenuOpen: false
+		menuOpen: false
 	},
 	mutations: {
-		mobileMenuOpen(state, data) {
-			state.mobileMenuOpen = data;
+		menuOpen(state, data) {
+			state.menuOpen = data;
 		}
 	}
 });

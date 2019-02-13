@@ -2,6 +2,7 @@ Thumbs.db
 .DS_Store
 node_modules
 /dist
+/Design Assets
 
 # local env files
 .env.local

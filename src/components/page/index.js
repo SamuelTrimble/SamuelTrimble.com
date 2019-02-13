@@ -1,5 +1,7 @@
-import MainNavBar from './MainNavBar'
+import HexGrid from './HexGrid'
+import HexNav from './HexNav'
 
 export {
-	MainNavBar
+	HexGrid,
+	HexNav
 }
