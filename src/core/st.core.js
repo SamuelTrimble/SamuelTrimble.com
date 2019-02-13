@@ -16,4 +16,15 @@ export default class ST_Core {
 	install(vue) {
 		vue.prototype.$st = this;
 	}
+
+	throttle(func, delay) {
+		let prev = Date.now() - delay;
+		return (...args) => {
+			let cur = Date.now();
+			if (cur - prev >= delay) {
+				prev = cur;
+				func.apply(null, args);
+			}
+		};
+	}
 }
