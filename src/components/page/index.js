@@ -1,7 +1,7 @@
-import HexGrid from './HexGrid'
+import StaticBackground from './StaticBackground'
 import HexNav from './HexNav'
 
 export {
-	HexGrid,
+	StaticBackground,
 	HexNav
 }

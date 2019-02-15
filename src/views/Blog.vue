@@ -1,15 +1,12 @@
 <template>
-	<div data-page="Home">
-		
+	<div data-page="Blog">
+
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'Home',
-	components: {
-		
-	},
+	name: 'Blog',
 	mounted: function() {
 		this.$st.CurPage = this;
 	}
@@ -19,5 +16,7 @@ export default {
 <style lang="scss">
 @import "../styles/_globals";
 
-
+#page[data-page="Blog"] {
+	
+}
 </style>

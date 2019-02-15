@@ -1,18 +1,18 @@
 <template>
 	<div id="app">
-		<HexGrid id="background" :class="{ fade : menuOpen }" />
+		<StaticBackground class="st_fadeable" :class="{ fade : menuOpen }" />
+		<router-view id="page" class="st_fadeable" :class="{ fade : menuOpen }" />
 		<HexNav />
-		<router-view id="page" :class="{ fade : menuOpen }" />
 	</div>
 </template>
 
 <script>
-import { HexGrid, HexNav } from '@/components/page/'
+import { StaticBackground, HexNav } from '@/components/page/'
 
 export default {
 	name: 'App',
 	components: {
-		HexGrid,
+		StaticBackground,
 		HexNav
 	},
 	mounted: function() {
@@ -45,17 +45,17 @@ body {
 	width: 100%;
 	min-height: 100vh;
 
-	color: $black;
+	color: $white;
 	@include font-regular();
 	font-size: 100%;
 
-	background: $white;
+	background: $black;
 }
 
 h1, h2, h3, h4 {
 	margin: 0;
 
-	color: $black;
+	color: $white;
 	@include font-light();
 	line-height: 1.2em;
 }
@@ -74,7 +74,7 @@ h4 {
 p {
 	margin: 0;
 
-	color: $black;
+	color: $white;
 	@include font-regular();
 	font-size: 1.125rem;
 	line-height: 1.25em;
@@ -99,6 +99,17 @@ p {
 	width: 100%;
 	height: 100%;
 }
+.st_fadeable {
+	opacity: 1;
+
+	transition: opacity .25s linear;
+
+	&.fade {
+		opacity: .25;
+
+		pointer-events: none;
+	}
+}
 
 #app {
 	position: fixed;
@@ -112,29 +123,14 @@ p {
 
 #page {
 	position: absolute;
-	opacity: 1;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 
-	transition: opacity .25s ease-in-out;
+	background: rgba($black, 0.5);
 
 	overflow-x: hidden;
 	overflow-y: auto;
-
-	&.fade {
-		opacity: .25;
-	}
-}
-
-#background {
-	opacity: 1;
-
-	transition: opacity .25s ease-in-out;
-
-	&.fade {
-		opacity: .25;
-	}
 }
 </style>
