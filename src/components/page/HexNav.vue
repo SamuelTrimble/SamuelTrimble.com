@@ -1,8 +1,10 @@
 <template>
-	<nav id="st_mainNav" @click="toggleOpen" :class="{ open : menuOpen }" v-bind:style="{ top: navY, left: navX }">
+	<nav id="st_mainNav" @click.stop="toggleOpen" :class="{ open : menuOpen }" v-bind:style="{ top: navY, left: navX }">
 		<router-link id="st_mainNav-about" to="/" class="nav_link">about</router-link>
 		<router-link id="st_mainNav-projects" to="/projects" class="nav_link">projects</router-link>
 		<router-link id="st_mainNav-blog" to="/blog" class="nav_link">blog</router-link>
+		<img class="preloadHoverImage" src='../../assets/images/icons/SLT_hover.png'>
+		<img class="preloadHoverImage" src='../../assets/images/icons/link-hex_hover.png'>
 	</nav>
 </template>
 
@@ -36,6 +38,7 @@ export default {
 				this.floatX = Math.floor((evt.x / window.innerWidth) * 20);
 				this.floatY = Math.floor((evt.y / window.innerHeight) * 20);
 			}, 200));
+
 		},
 		toggleOpen: function() {
 			this.$store.commit('menuOpen', !this.menuOpen);
@@ -85,6 +88,7 @@ export default {
 		pointer-events: none;
 
 		color: $white;
+		@include font-regular();
 		line-height: 95px;
 		text-align: center;
 		text-decoration: none !important;
@@ -131,6 +135,13 @@ export default {
 			top: 71px;
 			left: -40px;
 		}
+	}
+
+	> .preloadHoverImage {
+		position: absolute;
+		left: -10000px;
+		width: 1px;
+		height: 1px;
 	}
 }
 </style>

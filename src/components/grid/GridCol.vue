@@ -345,7 +345,7 @@ export default {
 	}
 }
 @media only screen and (min-width: $breakpoint-xl + $grid-gutters) {
-	.col-xrg-1 {
+	.col-xlrg-1 {
 		grid-column-end: span 1;
 	}
 	.col-xlrg-2 {

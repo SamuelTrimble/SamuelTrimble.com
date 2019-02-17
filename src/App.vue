@@ -17,10 +17,21 @@ export default {
 	},
 	mounted: function() {
 		this.$st.App = this;
+		this.$nextTick(this.init);
 	},
 	computed: {
 		menuOpen() {
 			return this.$store.state.menuOpen;
+		}
+	},
+	methods: {
+		init: function() {
+			//Close navigation if clicked outside of it
+			document.addEventListener('click', () => {
+				if (this.$store.state.menuOpen) {
+					this.$store.commit('menuOpen', false);
+				}
+			});
 		}
 	}
 }
@@ -32,6 +43,7 @@ export default {
 *:not(input):not(textarea) {
 	outline: none !important;
 }
+*,
 *:before,
 *:after {
 	box-sizing: border-box;
@@ -56,7 +68,7 @@ h1, h2, h3, h4 {
 	margin: 0;
 
 	color: $white;
-	@include font-light();
+	@include font-regular();
 	line-height: 1.2em;
 }
 h1 {
@@ -109,6 +121,12 @@ p {
 
 		pointer-events: none;
 	}
+}
+
+.st_sectionHeader {
+	margin: 100px 0 40px 0;
+
+	text-align: center;
 }
 
 #app {
