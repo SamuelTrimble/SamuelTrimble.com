@@ -111,17 +111,25 @@
 			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
 			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
 		</div>
-		<GridContainer id="contactBlock">
+		<GridContainer id="contactBlock" :isFull="true">
 			<GridRow>
-				<GridCol :small="12">
+				<GridCol :small="10" :start="2">
 					<h1 class="st_sectionHeader">Contact</h1>
 				</GridCol>
 			</GridRow>
 			<GridRow>
-				<GridCol :small="12">
-					
+				<GridCol :small="10" :start="2" :medium="6" :mediumStart="4">
+					<h3>I'm always up for hearing about interesting opportunities.<br>Feel free to get in touch and drop me a line.</h3>
 				</GridCol>
 			</GridRow>
+			<GridRow>
+				<GridCol id="contactLinksCol" :small="10" :start="2" :medium="6" :mediumStart="4">
+					<a id="link_email" class="st_hexButton" href="mailto:sam.trimble@gmail.com" target="_blank">email</a>
+					<a id="link_linkedin" class="st_hexButton" href="https://www.linkedin.com/in/samueltrimble/" target="_blank">linkedin</a>
+					<a id="link_github" class="st_hexButton" href="https://github.com/SamuelTrimble" target="_blank">github</a>
+				</GridCol>
+			</GridRow>
+			<div id="copyright">© 2019 Samuel Trimble. All Rights Reserved.</div>
 		</GridContainer>
 		<div class="foldScroll top" @click="scrollToHero">
 			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
@@ -311,7 +319,40 @@ export default {
 	}
 
 	#contactBlock {
-		min-height: 100vh;
+		position: relative;
+		height: 100vh;
+
+		background: url(../assets/images/footer/profile_mobile.png) left bottom no-repeat;
+		background-size: 100% auto;
+
+		@media only screen and (min-width: $breakpoint-l + $grid-gutters) {
+			background-image: url(../assets/images/footer/profile_hd.png);
+		}
+		@media only screen and (min-width: $breakpoint-xl + $grid-gutters) {
+			background-image: url(../assets/images/footer/profile_uhd.png);
+		}
+	}
+	#contactLinksCol {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		margin-top: 20px;
+
+		.st_hexButton {
+			margin: 20px -10px;
+		}
+	}
+	#copyright {
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+
+		color: $white;
+		font-size: .5rem;
+		text-align: center;
+
+		transform: translateX(-50%);
 	}
 }
 
