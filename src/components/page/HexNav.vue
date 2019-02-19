@@ -89,6 +89,7 @@ export default {
 
 		color: $white;
 		@include font-regular();
+		font-size: 1rem;
 		line-height: 95px;
 		text-align: center;
 		text-decoration: none !important;
@@ -101,11 +102,6 @@ export default {
 		&:hover,
 		&:active {
 			background-image: url(../../assets/images/icons/link-hex_hover.png);
-		}
-
-		@media only screen and (min-width: $breakpoint-m + $grid-gutters) {
-			width: 100px;
-			height: 100px;
 		}
 	}
 

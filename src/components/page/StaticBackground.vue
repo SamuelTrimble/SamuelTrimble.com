@@ -14,6 +14,7 @@ export default {
 #st_staticBackground {
 	background-image: url(./../../assets/images/hero/hero_mobile.png);
 	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 
 	@media only screen and (min-width: $breakpoint-l + $grid-gutters) {

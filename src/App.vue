@@ -123,10 +123,59 @@ p {
 	}
 }
 
+.st_fullPageContainer {
+	position: relative;
+	height: 100vh;
+
+	.st_gridRow {
+		height: 100%;
+
+		.st_gridCol {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+
 .st_sectionHeader {
 	margin: 100px 0 40px 0;
 
+	font-size: 2rem;
 	text-align: center;
+
+	@media only screen and (min-width: $breakpoint-m + $grid-gutters) {
+		font-size: 3rem;
+	}
+}
+
+.st_hexButton {
+	display: inline-block;
+	margin: 20px 0;
+	width: 100px;
+	height: 100px;
+
+	cursor: pointer;
+
+	color: $white;
+	@include font-regular();
+	font-size: 1rem;
+	line-height: 95px;
+	text-align: center;
+	text-decoration: none !important;
+
+	background: url(./assets/images/icons/link-hex.png) center center no-repeat;
+	background-size: contain;
+	border: none;
+
+	transition: all 250ms ease-in-out;
+
+	&:hover,
+	&:active,
+	&.active {
+		background-image: url(./assets/images/icons/link-hex_hover.png);
+	}
 }
 
 #app {
@@ -150,5 +199,17 @@ p {
 
 	overflow-x: hidden;
 	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: rgba($blue, .25);
+		border-radius: $border-radius;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba($blue, .75);
+		border-radius: $border-radius;
+	}
 }
 </style>
