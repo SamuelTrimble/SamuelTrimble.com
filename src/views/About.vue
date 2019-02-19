@@ -6,7 +6,7 @@
 					<h1 id="heroTitle">Samuel Trimble</h1>
 					<h2 id="heroSubTitle">full-stack web developer</h2>
 					<p id="heroSummary">Over 20 years of development experience building everything from mobile enterprise applications to custom CMS architecture to interactive web-based kiosks to AAA video game user interfaces.</p>
-					<div id="heroLinks">
+					<div id="heroLinks" class="st_inlineHexLinks">
 						<a id="link_skills" class="st_hexButton" @click="scrollToSkills">skills</a>
 						<a id="link_projects" class="st_hexButton" @click="scrollToProjects">projects</a>
 						<a id="link_blog" class="st_hexButton" @click="scrollToBlog">blog</a>
@@ -84,8 +84,19 @@
 				</GridCol>
 			</GridRow>
 			<GridRow>
-				<GridCol :small="12" :medium="6" :mediumStart="4">
+				<GridCol :small="12" :large="2" :largeStart="4">
 					
+				</GridCol>
+				<GridCol :small="12" :large="2" :largeStart="4">
+					
+				</GridCol>
+				<GridCol :small="12" :large="2" :largeStart="4">
+					
+				</GridCol>
+			</GridRow>
+			<GridRow>
+				<GridCol class="st_inlineHexLinks" :small="12" :medium="6" :mediumStart="4">
+					<router-link to="/projects" class="st_hexButton">more</router-link>
 				</GridCol>
 			</GridRow>
 		</GridContainer>
@@ -105,6 +116,11 @@
 					
 				</GridCol>
 			</GridRow>
+			<GridRow>
+				<GridCol class="st_inlineHexLinks" :small="12" :medium="6" :mediumStart="4">
+					<router-link to="/blog" class="st_hexButton">more</router-link>
+				</GridCol>
+			</GridRow>
 		</GridContainer>
 		<div class="foldScroll secondary" @click="scrollToContact">
 			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
@@ -119,12 +135,13 @@
 			</GridRow>
 			<GridRow>
 				<GridCol :small="10" :start="2" :medium="6" :mediumStart="4">
-					<h3>I'm always up for hearing about interesting opportunities.<br>Feel free to get in touch and drop me a line.</h3>
+					<h3>I'm always up for hearing about interesting opportunities.</h3>
 				</GridCol>
 			</GridRow>
 			<GridRow>
-				<GridCol id="contactLinksCol" :small="10" :start="2" :medium="6" :mediumStart="4">
+				<GridCol id="contactLinksCol" class="st_inlineHexLinks" :small="10" :start="2" :medium="6" :mediumStart="4">
 					<a id="link_email" class="st_hexButton" href="mailto:sam.trimble@gmail.com" target="_blank">email</a>
+					<a id="link_cell" class="st_hexButton" href="tel:+14255010074" target="_blank">cell</a>
 					<a id="link_linkedin" class="st_hexButton" href="https://www.linkedin.com/in/samueltrimble/" target="_blank">linkedin</a>
 					<a id="link_github" class="st_hexButton" href="https://github.com/SamuelTrimble" target="_blank">github</a>
 				</GridCol>
@@ -218,10 +235,6 @@ export default {
 	}
 	#heroLinks {
 		margin-top: 20px;
-
-		.st_hexButton {
-			margin: 20px -10px;
-		}
 	}
 
 	.foldScroll {
@@ -333,26 +346,17 @@ export default {
 		}
 	}
 	#contactLinksCol {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
 		margin-top: 20px;
-
-		.st_hexButton {
-			margin: 20px -10px;
-		}
 	}
 	#copyright {
 		position: absolute;
-		bottom: 10px;
-		left: 50%;
+		bottom: 20px;
+		left: 0;
+		width: 100%;
 
 		color: $white;
 		font-size: .5rem;
 		text-align: center;
-
-		transform: translateX(-50%);
 	}
 }
 

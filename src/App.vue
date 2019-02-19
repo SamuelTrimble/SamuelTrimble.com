@@ -177,6 +177,16 @@ p {
 		background-image: url(./assets/images/icons/link-hex_hover.png);
 	}
 }
+.st_inlineHexLinks {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	.st_hexButton {
+		margin: 20px -10px;
+	}
+}
 
 #app {
 	position: fixed;
