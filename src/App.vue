@@ -70,6 +70,7 @@ h1, h2, h3, h4 {
 	color: $white;
 	@include font-regular();
 	line-height: 1.2em;
+	text-align: center;
 }
 h1 {
 	font-size: 2rem;
@@ -127,10 +128,10 @@ p {
 	position: relative;
 	height: 100vh;
 
-	.st_gridRow {
+	> .st_gridRow {
 		height: 100%;
 
-		.st_gridCol {
+		> .st_gridCol {
 			display: flex;
 			flex-direction: column;
 			align-items: center;

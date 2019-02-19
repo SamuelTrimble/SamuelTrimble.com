@@ -85,13 +85,19 @@
 			</GridRow>
 			<GridRow>
 				<GridCol :small="12" :large="2" :largeStart="4">
-					
+					<div class="comingSoonBlock">
+						<h2>coming soon...</h2>
+					</div>
 				</GridCol>
-				<GridCol :small="12" :large="2" :largeStart="4">
-					
+				<GridCol :small="12" :large="2" :largeStart="6">
+					<div class="comingSoonBlock">
+						<h2>coming soon...</h2>
+					</div>
 				</GridCol>
-				<GridCol :small="12" :large="2" :largeStart="4">
-					
+				<GridCol :small="12" :large="2" :largeStart="8">
+					<div class="comingSoonBlock">
+						<h2>coming soon...</h2>
+					</div>
 				</GridCol>
 			</GridRow>
 			<GridRow>
@@ -113,7 +119,9 @@
 			</GridRow>
 			<GridRow>
 				<GridCol :small="12" :medium="6" :mediumStart="4">
-					
+					<div class="comingSoonBlock">
+						<h2>coming soon...</h2>
+					</div>
 				</GridCol>
 			</GridRow>
 			<GridRow>
@@ -140,7 +148,7 @@
 			</GridRow>
 			<GridRow>
 				<GridCol id="contactLinksCol" class="st_inlineHexLinks" :small="10" :start="2" :medium="6" :mediumStart="4">
-					<a id="link_email" class="st_hexButton" href="mailto:sam.trimble@gmail.com" target="_blank">email</a>
+					<a id="link_email" class="st_hexButton" href="mailto:contact@samueltrimble.com" target="_blank">email</a>
 					<a id="link_cell" class="st_hexButton" href="tel:+14255010074" target="_blank">cell</a>
 					<a id="link_linkedin" class="st_hexButton" href="https://www.linkedin.com/in/samueltrimble/" target="_blank">linkedin</a>
 					<a id="link_github" class="st_hexButton" href="https://github.com/SamuelTrimble" target="_blank">github</a>
@@ -203,12 +211,6 @@ export default {
 @import "../styles/_globals";
 
 #page[data-page="About"] {
-	h1,
-	h2,
-	h3 {
-		text-align: center;
-	}
-
 	#heroTitle {
 		font-size: 2rem;
 
@@ -357,6 +359,19 @@ export default {
 		color: $white;
 		font-size: .5rem;
 		text-align: center;
+	}
+
+	.comingSoonBlock {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		min-height: 200px;
+
+		background-color: rgba($black, .5);
+		border: 2px solid rgba($white, .5);
+		border-radius: $border-radius;
 	}
 }
 
