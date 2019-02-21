@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import { StaticBackground, HexNav } from '@/components/page/'
+import { HexNav, StaticBackground } from '@/components/page/'
 
 export default {
 	name: 'App',
 	components: {
-		StaticBackground,
-		HexNav
+		HexNav,
+		StaticBackground
 	},
 	mounted: function() {
 		this.$st.App = this;

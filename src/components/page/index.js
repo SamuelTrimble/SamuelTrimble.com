@@ -1,7 +1,9 @@
-import StaticBackground from './StaticBackground'
 import HexNav from './HexNav'
+import PageScroller from './PageScroller'
+import StaticBackground from './StaticBackground'
 
 export {
-	StaticBackground,
-	HexNav
+	HexNav,
+	PageScroller,
+	StaticBackground
 }

@@ -15,11 +15,7 @@
 				</GridCol>
 			</GridRow>
 		</GridContainer>
-		<div class="foldScroll" @click="scrollToSkills">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-		</div>
+		<PageScroller @click="scrollToSkills" />
 		<GridContainer id="skillsBlock">
 			<GridRow>
 				<GridCol :small="12">
@@ -72,11 +68,7 @@
 				</GridCol>
 			</GridRow>
 		</GridContainer>
-		<div class="foldScroll secondary" @click="scrollToProjects">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-		</div>
+		<PageScroller :hideOnMobile="true" @click="scrollToProjects" />
 		<GridContainer id="projectsBlock">
 			<GridRow>
 				<GridCol :small="12">
@@ -106,11 +98,7 @@
 				</GridCol>
 			</GridRow>
 		</GridContainer>
-		<div class="foldScroll secondary" @click="scrollToBlog">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-		</div>
+		<PageScroller :hideOnMobile="true" @click="scrollToBlog" />
 		<GridContainer id="blogBlock">
 			<GridRow>
 				<GridCol :small="12">
@@ -130,11 +118,7 @@
 				</GridCol>
 			</GridRow>
 		</GridContainer>
-		<div class="foldScroll secondary" @click="scrollToContact">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-		</div>
+		<PageScroller :hideOnMobile="true" @click="scrollToContact" />
 		<GridContainer id="contactBlock" :isFull="true">
 			<GridRow>
 				<GridCol :small="10" :start="2">
@@ -156,19 +140,17 @@
 			</GridRow>
 			<div id="copyright">© 2019 Samuel Trimble. All Rights Reserved.</div>
 		</GridContainer>
-		<div class="foldScroll top" @click="scrollToHero">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-			<img class="foldCarrot" src="../assets/images/icons/carrot-down.svg">
-		</div>
+		<PageScroller id="backToTop" :flip="true" :hideOnMobile="true" @click="scrollToHero" />
 	</div>
 </template>
 
 <script>
+import PageScroller from '@/components/page/PageScroller'
+
 export default {
 	name: 'About',
 	components: {
-		
+		PageScroller
 	},
 	data() {
 		return {
@@ -239,56 +221,12 @@ export default {
 		margin-top: 20px;
 	}
 
-	.foldScroll {
-		position: relative;
-		top: -64px;
-		left: 50%;
-		width: 64px;
-		height: 64px;
-
-		cursor: pointer;
-
-		transform: translateX(-50%);
-
-		&.secondary {
-			display: none;
-
-			@media only screen and (min-width: $breakpoint-m + $grid-gutters) {
-				display: block;
-			}
-		}
-
-		&.top {
-			position: fixed;
-			top: auto;
-			bottom: 20px;
-			left: auto;
-			right: 20px;
-
-			transform: rotate(180deg);
-		}
-
-		.foldCarrot {
-			display: block;
-			position: absolute;
-			opacity: 0;
-			bottom: 100%;
-			left: -2px;
-			width: 100%;
-			height: 100%;
-
-			animation: foldCarrot 2s linear infinite;
-
-			&:nth-of-type(1) {
-				animation-delay: 0;
-			}
-			&:nth-of-type(2) {
-				animation-delay: 400ms;
-			}
-			&:nth-of-type(3) {
-				animation-delay: 800ms;
-			}
-		}
+	#backToTop {
+		position: fixed;
+		top: auto;
+		bottom: 20px;
+		left: auto;
+		right: 20px;
 	}
 
 	#skillsBlock {
@@ -372,27 +310,6 @@ export default {
 		background-color: rgba($black, .5);
 		border: 2px solid rgba($white, .5);
 		border-radius: $border-radius;
-	}
-}
-
-@keyframes foldCarrot {
-	0% {
-		bottom: 70%;
-		opacity: 0;
-	}
-	20% {
-		opacity: 1;
-	}
-	50% {
-		bottom: 20%;
-		opacity: 1;
-	}
-	80% {
-		opacity: 1;
-	}
-	100% {
-		bottom: -30%;
-		opacity: 0;
 	}
 }
 </style>
