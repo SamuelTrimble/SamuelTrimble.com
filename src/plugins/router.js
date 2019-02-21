@@ -4,7 +4,7 @@ import About from './../views/About.vue'
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
 	mode: 'history',
 	base: process.env.BASE_URL,
 	routes: [
@@ -25,3 +25,13 @@ export default new Router({
 		}
 	]
 });
+
+router.afterEach((to, from) => {
+	gtag('config', 'UA-34616787-1', {
+		'page_title' : to.name,
+		'page_location' : to.fullPath,
+		'page_path' : to.path
+	});
+});
+
+export default router;

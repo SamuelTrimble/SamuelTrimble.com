@@ -97,7 +97,7 @@
 			</GridRow>
 			<GridRow>
 				<GridCol class="st_inlineHexLinks" :small="12" :medium="6" :mediumStart="4">
-					<router-link to="/projects" class="st_hexButton">more</router-link>
+					<a @click="gotoPage('/projects', 'about_projects_viewmore')" class="st_hexButton">more</a>
 				</GridCol>
 			</GridRow>
 			</GridContainer>
@@ -119,7 +119,7 @@
 			</GridRow>
 			<GridRow>
 				<GridCol class="st_inlineHexLinks" :small="12" :medium="6" :mediumStart="4">
-					<router-link to="/blog" class="st_hexButton">more</router-link>
+					<a @click="gotoPage('/blog', 'about_blog_viewmore')" class="st_hexButton">more</a>
 				</GridCol>
 			</GridRow>
 			</GridContainer>
@@ -168,19 +168,46 @@ export default {
 		this.$st.CurPage = this;
 	},
 	methods: {
+		gotoPage: function(path, from) {
+			gtag('event', 'page_link', {
+				'event_category' : 'engagement',
+				'event_label' : from
+			});
+			this.$router.push(path);
+		},
 		scrollToHero: function() {
+			gtag('event', 'page_scroll_to_section', {
+				'event_category' : 'engagement',
+				'event_label' : 'about_hero'
+			});
 			document.getElementById('heroBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToSkills: function() {
+			gtag('event', 'page_scroll_to_section', {
+				'event_category' : 'engagement',
+				'event_label' : 'about_skills'
+			});
 			document.getElementById('skillsBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToProjects: function() {
+			gtag('event', 'page_scroll_to_section', {
+				'event_category' : 'engagement',
+				'event_label' : 'about_projects'
+			});
 			document.getElementById('projectsBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToBlog: function() {
+			gtag('event', 'page_scroll_to_section', {
+				'event_category' : 'engagement',
+				'event_label' : 'about_blog'
+			});
 			document.getElementById('blogBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToContact: function() {
+			gtag('event', 'page_scroll_to_section', {
+				'event_category' : 'engagement',
+				'event_label' : 'about_contact'
+			});
 			document.getElementById('contactBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		showFrontEnd: function() {

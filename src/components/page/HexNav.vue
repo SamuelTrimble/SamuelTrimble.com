@@ -1,8 +1,8 @@
 <template>
 	<nav id="st_mainNav" @click.stop="toggleOpen" :class="{ open : menuOpen }" v-bind:style="{ top: navY, left: navX }">
-		<router-link id="st_mainNav-about" to="/" class="nav_link">about</router-link>
-		<router-link id="st_mainNav-projects" to="/projects" class="nav_link">projects</router-link>
-		<router-link id="st_mainNav-blog" to="/blog" class="nav_link">blog</router-link>
+		<a id="st_mainNav-about" @click="gotoPage('/', 'about')" class="nav_link">about</a>
+		<a id="st_mainNav-projects" @click="gotoPage('/projects', 'projects')" class="nav_link">projects</a>
+		<a id="st_mainNav-blog" @click="gotoPage('/blog', 'blog')" class="nav_link">blog</a>
 		<img class="preloadHoverImage" src='../../assets/images/icons/SLT_hover.png'>
 		<img class="preloadHoverImage" src='../../assets/images/icons/link-hex_hover.png'>
 	</nav>
@@ -40,8 +40,28 @@ export default {
 			}, 200));
 
 		},
+		gotoPage: function(path, from) {
+			gtag('event', 'page_link', {
+				'event_category' : 'engagement',
+				'event_label' : this.$router.currentRoute.name + '_mainav_' + from
+			});
+			this.$router.push(path);
+		},
 		toggleOpen: function() {
-			this.$store.commit('menuOpen', !this.menuOpen);
+			let open = this.menuOpen;
+
+			this.$store.commit('menuOpen', !open);
+			if (open) {
+				gtag('event', 'mainnav_toggle', {
+					'event_category' : 'engagement',
+					'event_label' : 'closed'
+				});
+			} else {
+				gtag('event', 'mainnav_toggle', {
+					'event_category' : 'engagement',
+					'event_label' : 'opened'
+				})
+			}
 		}
 	}
 }
