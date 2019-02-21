@@ -16,7 +16,8 @@
 			</GridRow>
 		</GridContainer>
 		<PageScroller @click="scrollToSkills" />
-		<GridContainer id="skillsBlock">
+		<GridContainer id="skillsBlock" class="st_hexBackground bg1" :isFull="true">
+			<GridContainer>
 			<GridRow>
 				<GridCol :small="12">
 					<h1 class="st_sectionHeader">Skills</h1>
@@ -67,9 +68,11 @@
 					</div>
 				</GridCol>
 			</GridRow>
+			</GridContainer>
 		</GridContainer>
 		<PageScroller :hideOnMobile="true" @click="scrollToProjects" />
-		<GridContainer id="projectsBlock">
+		<GridContainer id="projectsBlock" class="st_hexBackground bg2" :isFull="true">
+			<GridContainer>
 			<GridRow>
 				<GridCol :small="12">
 					<h1 class="st_sectionHeader">Recent Projects</h1>
@@ -97,9 +100,11 @@
 					<router-link to="/projects" class="st_hexButton">more</router-link>
 				</GridCol>
 			</GridRow>
+			</GridContainer>
 		</GridContainer>
 		<PageScroller :hideOnMobile="true" @click="scrollToBlog" />
-		<GridContainer id="blogBlock">
+		<GridContainer id="blogBlock" class="st_hexBackground bg3" :isFull="true">
+			<GridContainer>
 			<GridRow>
 				<GridCol :small="12">
 					<h1 class="st_sectionHeader">Latest Blog Entry</h1>
@@ -117,6 +122,7 @@
 					<router-link to="/blog" class="st_hexButton">more</router-link>
 				</GridCol>
 			</GridRow>
+			</GridContainer>
 		</GridContainer>
 		<PageScroller :hideOnMobile="true" @click="scrollToContact" />
 		<GridContainer id="contactBlock" :isFull="true">

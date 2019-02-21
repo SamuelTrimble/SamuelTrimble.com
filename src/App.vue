@@ -189,6 +189,45 @@ p {
 	}
 }
 
+.st_hexBackground {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&.bg1 {
+		background-image: url(./assets/images/backgrounds/bg1_mobile.png);
+	}
+	&.bg2 {
+		background-image: url(./assets/images/backgrounds/bg2_mobile.png);
+	}
+	&.bg3 {
+		background-image: url(./assets/images/backgrounds/bg3_mobile.png);
+	}
+
+	@media only screen and (min-width: $breakpoint-l + $grid-gutters) {
+		&.bg1 {
+			background-image: url(./assets/images/backgrounds/bg1_hd.png);
+		}
+		&.bg2 {
+			background-image: url(./assets/images/backgrounds/bg2_hd.png);
+		}
+		&.bg3 {
+			background-image: url(./assets/images/backgrounds/bg3_hd.png);
+		}
+	}
+	@media only screen and (min-width: $breakpoint-xl + $grid-gutters) {
+		&.bg1 {
+			background-image: url(./assets/images/backgrounds/bg1_uhd.png);
+		}
+		&.bg2 {
+			background-image: url(./assets/images/backgrounds/bg2_uhd.png);
+		}
+		&.bg3 {
+			background-image: url(./assets/images/backgrounds/bg3_uhd.png);
+		}
+	}
+}
+
 #app {
 	position: fixed;
 	top: 0;
