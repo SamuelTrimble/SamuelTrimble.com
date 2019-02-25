@@ -95,7 +95,7 @@ p {
 
 .clearfix:after {
 	display: block;
-	clear: after;
+	clear: both;
 
 	content: '';
 }

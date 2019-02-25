@@ -19,9 +19,19 @@ const router = new Router({
 			component: () => import(/*webpackChunkName: "Projects" */ './../views/Projects.vue')
 		},
 		{
+			path: '/projects/:id',
+			name: 'ProjectDetails',
+			component: () => import(/*webpackChunkName: "ProjectDetails" */ './../views/ProjectDetails.vue')
+		},
+		{
 			path: '/blog',
 			name: 'Blog',
 			component: () => import(/*webpackChunkName: "Blog" */ './../views/Blog.vue')
+		},
+		{
+			path: '*',
+			name: 'NotFound',
+			component: () => import(/*webpackChunkName: "NotFound" */ './../views/errors/NotFound.vue')
 		}
 	]
 });

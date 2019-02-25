@@ -4,7 +4,7 @@ My personal portfolio website.
 
 Endeavored to build something clean & simple & stylish, capable of quickly & easily getting across the main points without being cluttered or distracting.
 
-Head over to [https://www.samueltrimble.com/](https://www.samueltrimble.com) and check it out.
+Head on over to [https://www.samueltrimble.com/](https://www.samueltrimble.com) and check it out.
 
 #### TODO:
 * Add project section & example pages.

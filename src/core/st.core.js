@@ -17,6 +17,13 @@ export default class ST_Core {
 		vue.prototype.$st = this;
 	}
 
+	log(msg) {
+		if (process.env.NODE_ENV !== "production") {
+			//eslint-disable-next-line
+			console.log(msg);
+		}
+	}
+
 	throttle(func, delay) {
 		let prev = Date.now() - delay;
 		return (...args) => {
