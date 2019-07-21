@@ -48,7 +48,7 @@ export default {
 			this.$router.push(path);
 		},
 		toggleOpen: function() {
-			let open = this.menuOpen;
+			/*let open = this.menuOpen;
 
 			this.$store.commit('menuOpen', !open);
 			if (open) {
@@ -61,7 +61,7 @@ export default {
 					'event_category' : 'engagement',
 					'event_label' : 'opened'
 				})
-			}
+			}*/
 		}
 	}
 }
@@ -78,7 +78,7 @@ export default {
 	width: 100px;
 	height: 100px;
 
-	cursor: pointer;
+	/*cursor: pointer;*/
 
 	background: url(../../assets/images/icons/SLT.png) center center no-repeat;
 	background-size: contain;

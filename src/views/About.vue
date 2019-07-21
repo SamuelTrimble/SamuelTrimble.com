@@ -6,17 +6,18 @@
 					<h1 id="heroTitle">Samuel Trimble</h1>
 					<h2 id="heroSubTitle">full-stack web developer</h2>
 					<p id="heroSummary">Over 20 years of development experience building everything from mobile enterprise applications to custom CMS architecture to interactive web-based kiosks to AAA video game user interfaces.</p>
-					<div id="heroLinks" class="st_inlineHexLinks">
+					<!--<div id="heroLinks" class="st_inlineHexLinks">
 						<a id="link_skills" class="st_hexButton" @click="scrollToSkills">skills</a>
 						<a id="link_projects" class="st_hexButton" @click="scrollToProjects">projects</a>
 						<a id="link_blog" class="st_hexButton" @click="scrollToBlog">blog</a>
 						<a id="link_contact" class="st_hexButton" @click="scrollToContact">contact</a>
-					</div>
+					</div>-->
 				</GridCol>
 			</GridRow>
 		</GridContainer>
 		<PageScroller @click="scrollToSkills" />
-		<GridContainer id="skillsBlock" class="st_hexBackground bg1" :isFull="true">
+		<!--<GridContainer id="skillsBlock" class="st_hexBackground bg1" :isFull="true">-->
+		<GridContainer id="skillsBlock" :isFull="true">
 			<GridContainer>
 			<GridRow>
 				<GridCol :small="12">
@@ -29,7 +30,7 @@
 						<h2>front-end web development</h2>
 						<ul>
 							<li>HTML</li>
-							<li>CSS, SASS</li>
+							<li>CSS, SCSS</li>
 							<li>Javascript</li>
 							<li>Vue.js, Vuex, Vue Router</li>
 							<li>Node.js</li>
@@ -70,7 +71,7 @@
 			</GridRow>
 			</GridContainer>
 		</GridContainer>
-		<PageScroller :hideOnMobile="true" @click="scrollToProjects" />
+		<!--<PageScroller :hideOnMobile="true" @click="scrollToProjects" />
 		<GridContainer id="projectsBlock" class="st_hexBackground bg2" :isFull="true">
 			<GridContainer>
 			<GridRow>
@@ -123,7 +124,7 @@
 				</GridCol>
 			</GridRow>
 			</GridContainer>
-		</GridContainer>
+		</GridContainer>-->
 		<PageScroller :hideOnMobile="true" @click="scrollToContact" />
 		<GridContainer id="contactBlock" :isFull="true">
 			<GridRow>
