@@ -41,7 +41,7 @@ export default {
 
 		},
 		gotoPage: function(path, from) {
-			gtag('event', 'page_link', {
+			window.gtag('event', 'page_link', {
 				'event_category' : 'engagement',
 				'event_label' : this.$router.currentRoute.name + '_mainav_' + from
 			});

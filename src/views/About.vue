@@ -170,42 +170,42 @@ export default {
 	},
 	methods: {
 		gotoPage: function(path, from) {
-			gtag('event', 'page_link', {
+			window.gtag('event', 'page_link', {
 				'event_category' : 'engagement',
 				'event_label' : from
 			});
 			this.$router.push(path);
 		},
 		scrollToHero: function() {
-			gtag('event', 'page_scroll_to_section', {
+			window.gtag('event', 'page_scroll_to_section', {
 				'event_category' : 'engagement',
 				'event_label' : 'about_hero'
 			});
 			document.getElementById('heroBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToSkills: function() {
-			gtag('event', 'page_scroll_to_section', {
+			window.gtag('event', 'page_scroll_to_section', {
 				'event_category' : 'engagement',
 				'event_label' : 'about_skills'
 			});
 			document.getElementById('skillsBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToProjects: function() {
-			gtag('event', 'page_scroll_to_section', {
+			window.gtag('event', 'page_scroll_to_section', {
 				'event_category' : 'engagement',
 				'event_label' : 'about_projects'
 			});
 			document.getElementById('projectsBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToBlog: function() {
-			gtag('event', 'page_scroll_to_section', {
+			window.gtag('event', 'page_scroll_to_section', {
 				'event_category' : 'engagement',
 				'event_label' : 'about_blog'
 			});
 			document.getElementById('blogBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToContact: function() {
-			gtag('event', 'page_scroll_to_section', {
+			window.gtag('event', 'page_scroll_to_section', {
 				'event_category' : 'engagement',
 				'event_label' : 'about_contact'
 			});

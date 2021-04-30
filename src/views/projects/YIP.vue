@@ -354,7 +354,7 @@ export default {
 
 			let startDate = null;
 			let endDate = null;
-			streaks.forEach((streak, streakIdx) => {
+			streaks.forEach((streak/*, streakIdx*/) => {
 				if (streak.good) {
 					if ((streakBest === null) || (streak.count > streakBest.count)) {
 						streakBest = streak;

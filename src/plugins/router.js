@@ -36,8 +36,8 @@ const router = new Router({
 	]
 });
 
-router.afterEach((to, from) => {
-	gtag('config', 'UA-34616787-1', {
+router.afterEach((to/*, from*/) => {
+	window.gtag('config', 'UA-34616787-1', {
 		'page_title' : to.name,
 		'page_location' : to.fullPath,
 		'page_path' : to.path

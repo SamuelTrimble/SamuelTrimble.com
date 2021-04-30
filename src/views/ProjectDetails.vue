@@ -21,7 +21,7 @@ export default {
 		this.$nextTick(this.init);
 	},
 	watch: {
-		'$route' (to, from) {
+		'$route' (to/*, from*/) {
 			this.setCurrentProject(to.params.id);
 		}
 	},

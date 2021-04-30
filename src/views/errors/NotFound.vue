@@ -21,13 +21,13 @@ export default {
 	},
 	methods: {
 		init: function() {
-			gtag('event', '404', {
+			window.gtag('event', '404', {
 				'event_category' : 'error',
 				'event_label' : this.$router.currentRoute.params.pathMatch
 			});
 		},
 		gotoPage: function(path, from) {
-			gtag('event', 'page_link', {
+			window.gtag('event', 'page_link', {
 				'event_category' : 'engagement',
 				'event_label' : from
 			});
