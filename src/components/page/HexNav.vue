@@ -1,18 +1,21 @@
 <template>
-	<nav id="st_mainNav" @click.stop="toggleOpen" :class="{ open : menuOpen }" v-bind:style="{ top: navY, left: navX }">
-		<a id="st_mainNav-about" @click="gotoPage('/', 'about')" class="nav_link">about</a>
-		<a id="st_mainNav-projects" @click="gotoPage('/projects', 'projects')" class="nav_link">projects</a>
-		<a id="st_mainNav-blog" @click="gotoPage('/blog', 'blog')" class="nav_link">blog</a>
-		<img class="preloadHoverImage" src='../../assets/images/icons/SLT_hover.png'>
-		<img class="preloadHoverImage" src='../../assets/images/icons/link-hex_hover.png'>
+	<nav id="st_mainNav" :class="{ open : menuOpen }" :style="{ top: navY, left: navX }" @click.stop="toggleOpen">
+		<a id="st_mainNav-about" class="nav_link" @click="gotoPage('/', 'about')">about</a>
+		<a id="st_mainNav-projects" class="nav_link" @click="gotoPage('/projects', 'projects')">projects</a>
+		<a id="st_mainNav-blog" class="nav_link" @click="gotoPage('/blog', 'blog')">blog</a>
+		<img class="preloadHoverImage" src="../../assets/images/icons/SLT_hover.png">
+		<img class="preloadHoverImage" src="../../assets/images/icons/link-hex_hover.png">
 	</nav>
 </template>
 
 <script>
 export default {
 	name: 'HexNav',
-	mounted: function() {
-		this.$nextTick(this.init);
+	data() {
+		return {
+			floatX: 0,
+			floatY: 0
+		};
 	},
 	computed: {
 		menuOpen() {
@@ -25,11 +28,8 @@ export default {
 			return this.floatY + "px";
 		}
 	},
-	data() {
-		return {
-			floatX: 0,
-			floatY: 0
-		};
+	mounted: function() {
+		this.$nextTick(this.init);
 	},
 	methods: {
 		init: function() {
@@ -64,7 +64,7 @@ export default {
 			}*/
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">

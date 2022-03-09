@@ -1,4 +1,4 @@
-export default class ST_Core {
+const Core = class ST_Core {
 	constructor() {
 		//eslint-disable-next-line
 		if (!!ST_Core.instance) {
@@ -8,22 +8,32 @@ export default class ST_Core {
 		ST_Core.instance = this;
 
 		this.App = null;
-		this.CurPage = null;
+		this.CurView = null;
 
 		return this;
 	}
 
+	//Vue plugin registration hook
 	install(vue) {
 		vue.prototype.$st = this;
 	}
 
-	log(msg) {
-		if (process.env.NODE_ENV !== "production") {
+	//Log messages to the console when not in production environment (can 'force' msgs in production)
+	log(msg, force) {
+		if ((force) || (process.env.NODE_ENV !== 'production')) {
 			//eslint-disable-next-line
 			console.log(msg);
 		}
 	}
 
+	//Throttles event listeners that fire rapid events like 'resize', 'mousemove', etc...
+	//so that they only fire a maximum of once every <delay>ms.
+	/*
+	Example use: (processes the 'mousemove' event a maximum of once every 200ms)
+	document.addEventListener('mousemove', Throttle((evt) => {
+		//do stuff with evt.x & evt.y
+	}, 200));
+	*/
 	throttle(func, delay) {
 		let prev = Date.now() - delay;
 		return (...args) => {
@@ -34,4 +44,6 @@ export default class ST_Core {
 			}
 		};
 	}
-}
+};
+
+export default new Core;

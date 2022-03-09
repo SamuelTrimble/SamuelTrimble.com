@@ -5,7 +5,7 @@
 <script>
 export default {
 	name: 'StaticBackground'
-}
+};
 </script>
 
 <style lang="scss">

@@ -1,29 +1,29 @@
 <template>
-	<div data-page="ProjectDetails">
-		<component id="project" v-if="(curProjectId !== '')" v-bind:is="curProjectId" />
+	<div data-page="ProjectDetailsView">
+		<component :is="curProjectId" v-if="(curProjectId !== '')" id="project" />
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'ProjectDetails',
+	name: 'ProjectDetailsView',
 	components: {
-		'yip': () => import(/*webpackChunkName: "ProjectYIP" */ './projects/YIP.vue')
+		'YIPView': () => import(/*webpackChunkName: "ProjectYIP" */ './projects/YIPView.vue')
 	},
 	data() {
 		return {
-			allowedProjects: ["yip"],
+			allowedProjects: ["YIPView"],
 			curProjectId: ""
-		}
-	},
-	mounted: function() {
-		this.$st.CurPage = this;
-		this.$nextTick(this.init);
+		};
 	},
 	watch: {
 		'$route' (to/*, from*/) {
 			this.setCurrentProject(to.params.id);
 		}
+	},
+	mounted: function() {
+		this.$st.CurView = this;
+		this.$nextTick(this.init);
 	},
 	methods: {
 		init: function() {
@@ -34,17 +34,17 @@ export default {
 			if (this.allowedProjects.includes(safeId)) {
 				this.curProjectId = safeId;
 			} else {
-				this.$router.push({ name : 'NotFound', params : { pathMatch : `/projects/${safeId}` }});
+				this.$router.push({ name : 'NotFoundView', params : { pathMatch : `/projects/${safeId}` }});
 			}
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">
 @import "../styles/_globals";
 
-#page[data-page="ProjectDetails"] {
+#page[data-page="ProjectDetailsView"] {
 	#project {
 		margin-top: 60px;
 	}

@@ -97,7 +97,7 @@ export default {
 			return c;
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <template>
-	<div data-project="YIP">
+	<div data-project="YIPView">
 		<h1 id="projectTitle">Year In Pixels</h1>
 		<h2 id="yearAverage"></h2>
 		<GridContainer>
@@ -24,22 +24,22 @@
 		<GridContainer>
 			<GridRow>
 				<GridCol :small="12" :medium="6" :large="3">
-					<h2 class='left'>Month averages:</h2>
+					<h2 class="left">Month averages:</h2>
 					<ul id="monthAverages" class="clearfix"></ul>
 					<p>Best month: <span id="bestMonth"></span><br>Worst month: <span id="worstMonth"></span></p>
 				</GridCol>
 				<GridCol :small="12" :medium="6" :large="3">
-					<h2 class='left'>Weekday averages:</h2>
+					<h2 class="left">Weekday averages:</h2>
 					<ul id="weekdayAverages" class="clearfix"></ul>
 					<p>Best day of week: <span id="bestWeek"></span><br>Worst day of week: <span id="worstWeek"></span></p>
 				</GridCol>
 				<GridCol :small="12" :medium="6" :large="3">
-					<h2 class='left'>Day of month averages:</h2>
+					<h2 class="left">Day of month averages:</h2>
 					<ul id="dayofmonthAverages" class="clearfix"></ul>
 					<p>Best day of month: <span id="bestDay"></span><br>Worst day of month: <span id="worstDay"></span></p>
 				</GridCol>
 				<GridCol :small="12" :medium="6" :large="3">
-					<h2 class='left'>Streaks:</h2>
+					<h2 class="left">Streaks:</h2>
 					<ul id="streakAverages" class="clearfix"></ul>
 					<p>Longest 'good' streak: <span id="bestStreak"></span><br>Longest 'bad' streak: <span id="worstStreak"></span></p>
 				</GridCol>
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { Decimal } from 'decimal.js'
+import { Decimal } from 'decimal.js';
 
 //Support class for building streaks
 class YIPStreak {
@@ -93,7 +93,7 @@ class YIPStreak {
 }
 
 export default {
-	name: 'yip',
+	name: 'YIPView',
 	data() {
 		return {
 			year: 2018,
@@ -114,7 +114,7 @@ export default {
 				[4,4,4,4,4,4,4,3,3,4,1,4,4,4,4,3,4,4,1,4,5,4,4,4,5,5,5,4,4,4,4]
 			],
 			minStreakLength: 4
-		}
+		};
 	},
 	mounted: function() {
 		this.$nextTick(this.init);
@@ -389,7 +389,7 @@ export default {
 			}
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">
@@ -401,7 +401,7 @@ $yip-yellow: #B9B427;
 $yip-green: #38B927;
 $yip-blue: #278EB9;
 
-#project[data-project="YIP"] {
+#project[data-project="YIPView"] {
 	#yearAverage {
 		> span {
 			display: inline-block;

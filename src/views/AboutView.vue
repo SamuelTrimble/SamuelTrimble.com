@@ -1,5 +1,5 @@
 <template>
-	<div data-page="About">
+	<div data-page="AboutView">
 		<GridContainer id="heroBlock" class="st_fullPageContainer">
 			<GridRow>
 				<GridCol :small="12" :start="1" :medium="6" :mediumStart="4">
@@ -19,56 +19,56 @@
 		<!--<GridContainer id="skillsBlock" class="st_hexBackground bg1" :isFull="true">-->
 		<GridContainer id="skillsBlock" :isFull="true">
 			<GridContainer>
-			<GridRow>
-				<GridCol :small="12">
-					<h1 class="st_sectionHeader">Skills</h1>
-				</GridCol>
-			</GridRow>
-			<GridRow>
-				<GridCol :small="12" :medium="6" :large="4" :largeStart="3">
-					<div class="techBlock">
-						<h2>front-end web development</h2>
-						<ul>
-							<li>HTML</li>
-							<li>CSS, SCSS</li>
-							<li>Javascript</li>
-							<li>Vue.js, Vuex, Vue Router</li>
-							<li>Node.js</li>
-							<li>Webpack</li>
-						</ul>
-						<ul>
-							<li>Visual Studio Code</li>
-							<li>Figma</li>
-							<li>Invision</li>
-							<li>Photoshop</li>
-							<li>Illustrator</li>
-							<li>Git, GitHub, Bitbucket</li>
-						</ul>
-					</div>
-				</GridCol>
-				<GridCol :small="12" :medium="6" :large="4">
-					<div class="techBlock" :class="{ active : backEndActive }">
-						<h2>back-end web development</h2>
-						<ul>
-							<li>C#</li>
-							<li>ASP.NET MVC</li>
-							<li>Razor</li>
-							<li>Entity Framework</li>
-							<li>LINQ</li>
-							<li>SQL</li>
-						</ul>
-						<ul>
-							<li>Visual Studio</li>
-							<li>Azure</li>
-							<li>MS SQL Server</li>
-							<li>Lucidchart</li>
-							<li>SSMS</li>
-							<li>IIS</li>
-							<li>Git, GitHub, Bitbucket</li>
-						</ul>
-					</div>
-				</GridCol>
-			</GridRow>
+				<GridRow>
+					<GridCol :small="12">
+						<h1 class="st_sectionHeader">Skills</h1>
+					</GridCol>
+				</GridRow>
+				<GridRow>
+					<GridCol :small="12" :medium="6" :large="4" :largeStart="3">
+						<div class="techBlock">
+							<h2>front-end web development</h2>
+							<ul>
+								<li>HTML</li>
+								<li>CSS, SCSS</li>
+								<li>Javascript</li>
+								<li>Vue.js, Vuex, Vue Router</li>
+								<li>Node.js</li>
+								<li>Webpack</li>
+							</ul>
+							<ul>
+								<li>Visual Studio Code</li>
+								<li>Figma</li>
+								<li>Invision</li>
+								<li>Photoshop</li>
+								<li>Illustrator</li>
+								<li>Git, GitHub, Bitbucket</li>
+							</ul>
+						</div>
+					</GridCol>
+					<GridCol :small="12" :medium="6" :large="4">
+						<div class="techBlock" :class="{ active : backEndActive }">
+							<h2>back-end web development</h2>
+							<ul>
+								<li>C#</li>
+								<li>ASP.NET MVC</li>
+								<li>Razor</li>
+								<li>Entity Framework</li>
+								<li>LINQ</li>
+								<li>SQL</li>
+							</ul>
+							<ul>
+								<li>Visual Studio</li>
+								<li>Azure</li>
+								<li>MS SQL Server</li>
+								<li>Lucidchart</li>
+								<li>SSMS</li>
+								<li>IIS</li>
+								<li>Git, GitHub, Bitbucket</li>
+							</ul>
+						</div>
+					</GridCol>
+				</GridRow>
 			</GridContainer>
 		</GridContainer>
 		<!--<PageScroller :hideOnMobile="true" @click="scrollToProjects" />
@@ -98,7 +98,7 @@
 			</GridRow>
 			<GridRow>
 				<GridCol class="st_inlineHexLinks" :small="12" :medium="6" :mediumStart="4">
-					<a @click="gotoPage('/projects', 'about_projects_viewmore')" class="st_hexButton">more</a>
+					<a @click="gotoPage('/projects')" class="st_hexButton">more</a>
 				</GridCol>
 			</GridRow>
 			</GridContainer>
@@ -120,7 +120,7 @@
 			</GridRow>
 			<GridRow>
 				<GridCol class="st_inlineHexLinks" :small="12" :medium="6" :mediumStart="4">
-					<a @click="gotoPage('/blog', 'about_blog_viewmore')" class="st_hexButton">more</a>
+					<a @click="gotoPage('/blog')" class="st_hexButton">more</a>
 				</GridCol>
 			</GridRow>
 			</GridContainer>
@@ -145,17 +145,17 @@
 					<a id="link_github" class="st_hexButton" href="https://github.com/SamuelTrimble" target="_blank">github</a>
 				</GridCol>
 			</GridRow>
-			<div id="copyright">© 2019 Samuel Trimble. All Rights Reserved.</div>
+			<div id="copyright">© {{ currentYear }} Samuel Trimble. All Rights Reserved.</div>
 		</GridContainer>
 		<PageScroller id="backToTop" :flip="true" :hideOnMobile="true" @click="scrollToHero" />
 	</div>
 </template>
 
 <script>
-import PageScroller from '@/components/page/PageScroller'
+import PageScroller from '@/components/page/PageScroller';
 
 export default {
-	name: 'About',
+	name: 'AboutView',
 	components: {
 		PageScroller
 	},
@@ -165,50 +165,32 @@ export default {
 			backEndActive: false
 		};
 	},
+	computed: {
+		currentYear: function() {
+			let year = new Date().getFullYear();
+			return year;
+		}
+	},
 	mounted: function() {
-		this.$st.CurPage = this;
+		this.$st.CurView = this;
 	},
 	methods: {
-		gotoPage: function(path, from) {
-			window.gtag('event', 'page_link', {
-				'event_category' : 'engagement',
-				'event_label' : from
-			});
+		gotoPage: function(path) {
 			this.$router.push(path);
 		},
 		scrollToHero: function() {
-			window.gtag('event', 'page_scroll_to_section', {
-				'event_category' : 'engagement',
-				'event_label' : 'about_hero'
-			});
 			document.getElementById('heroBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToSkills: function() {
-			window.gtag('event', 'page_scroll_to_section', {
-				'event_category' : 'engagement',
-				'event_label' : 'about_skills'
-			});
 			document.getElementById('skillsBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToProjects: function() {
-			window.gtag('event', 'page_scroll_to_section', {
-				'event_category' : 'engagement',
-				'event_label' : 'about_projects'
-			});
 			document.getElementById('projectsBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToBlog: function() {
-			window.gtag('event', 'page_scroll_to_section', {
-				'event_category' : 'engagement',
-				'event_label' : 'about_blog'
-			});
 			document.getElementById('blogBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		scrollToContact: function() {
-			window.gtag('event', 'page_scroll_to_section', {
-				'event_category' : 'engagement',
-				'event_label' : 'about_contact'
-			});
 			document.getElementById('contactBlock').scrollIntoView({ block: "start", behavior: "smooth" });
 		},
 		showFrontEnd: function() {
@@ -220,13 +202,13 @@ export default {
 			this.backEndActive = true;
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">
 @import "../styles/_globals";
 
-#page[data-page="About"] {
+#page[data-page="AboutView"] {
 	#heroTitle {
 		font-size: 2rem;
 

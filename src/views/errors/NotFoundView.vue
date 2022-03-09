@@ -1,11 +1,11 @@
 <template>
-	<div data-page="NotFound">
+	<div data-page="NotFoundView">
 		<GridContainer class="st_fullPageContainer">
 			<GridRow>
 				<GridCol :small="12">
 					<h1 id="heroTitle">Oh no!</h1>
 					<h2 id="heroSummary">The page at the location: "{{ $router.currentRoute.params.pathMatch }}" could not be found!</h2>
-					<a id="heroReturn" @click="gotoPage('/', '404_return')" class="st_hexButton">go home</a>
+					<a id="heroReturn" class="st_hexButton" @click="gotoPage('/')">go home</a>
 				</GridCol>
 			</GridRow>
 		</GridContainer>
@@ -14,33 +14,26 @@
 
 <script>
 export default {
-	name: 'NotFound',
+	name: 'NotFoundView',
 	mounted: function() {
-		this.$st.CurPage = this;
+		this.$st.CurView = this;
 		this.$nextTick(this.init);
 	},
 	methods: {
 		init: function() {
-			window.gtag('event', '404', {
-				'event_category' : 'error',
-				'event_label' : this.$router.currentRoute.params.pathMatch
-			});
+			
 		},
-		gotoPage: function(path, from) {
-			window.gtag('event', 'page_link', {
-				'event_category' : 'engagement',
-				'event_label' : from
-			});
+		gotoPage: function(path) {
 			this.$router.push(path);
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">
 @import "../../styles/_globals";
 
-#page[data-page="NotFound"] {
+#page[data-page="NotFoundView"] {
 	#heroTitle {
 		font-size: 2rem;
 

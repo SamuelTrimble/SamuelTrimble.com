@@ -1,5 +1,5 @@
 <template>
-	<div class="st_pageScroller" @click="$emit('click')" :class="{ flip : flip, hideOnMobile : hideOnMobile }">
+	<div class="st_pageScroller" :class="{ flip : flip, hideOnMobile : hideOnMobile }" @click="$emit('click')">
 		<img class="carrot" src="../../assets/images/icons/carrot-down.svg">
 		<img class="carrot" src="../../assets/images/icons/carrot-down.svg">
 		<img class="carrot" src="../../assets/images/icons/carrot-down.svg">
@@ -19,7 +19,7 @@ export default {
 			default: false
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">

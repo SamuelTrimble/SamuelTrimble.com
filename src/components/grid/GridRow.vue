@@ -7,7 +7,7 @@
 <script>
 export default {
 	name: 'GridRow'
-}
+};
 </script>
 
 <style lang="scss">

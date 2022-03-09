@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { HexNav, StaticBackground } from '@/components/page/'
+import { HexNav, StaticBackground } from '@/components/page/';
 
 export default {
 	name: 'App',
@@ -15,14 +15,14 @@ export default {
 		HexNav,
 		StaticBackground
 	},
-	mounted: function() {
-		this.$st.App = this;
-		this.$nextTick(this.init);
-	},
 	computed: {
 		menuOpen() {
 			return this.$store.state.menuOpen;
 		}
+	},
+	mounted: function() {
+		this.$st.App = this;
+		this.$nextTick(this.init);
 	},
 	methods: {
 		init: function() {
@@ -34,7 +34,7 @@ export default {
 			});
 		}
 	}
-}
+};
 </script>
 
 <style lang="scss">

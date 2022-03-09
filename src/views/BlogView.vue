@@ -1,5 +1,5 @@
 <template>
-	<div data-page="Blog">
+	<div data-page="BlogView">
 		<GridContainer class="st_fullPageContainer">
 			<GridRow>
 				<GridCol :small="12" :medium="6" :mediumStart="4">
@@ -31,17 +31,17 @@
 
 <script>
 export default {
-	name: 'Blog',
+	name: 'BlogView',
 	mounted: function() {
-		this.$st.CurPage = this;
+		this.$st.CurView = this;
 	}
-}
+};
 </script>
 
 <style lang="scss">
 @import "../styles/_globals";
 
-#page[data-page="Blog"] {
+#page[data-page="BlogView"] {
 	#heroTitle {
 		margin-bottom: 40px;
 		font-size: 2rem;

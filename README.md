@@ -24,5 +24,4 @@ Head on over to [https://www.samueltrimble.com/](https://www.samueltrimble.com) 
 Have a development opportunity you think I'd be a great fit for? Feel free to get in touch: [contact@samueltrimble.com](mailto:contact@samueltrimble.com).
 
 Enjoy this project? How about donating a coffee?
-* BTC: `36Cxj9oed5e2Yw4BDMbxXQNzWPW98sfX1y`
-* XRP: `rDjXRmM9qcd4yFqedHJRK8HgxijJakxoVJ`
+* BTC: `3DEGpi3CYVczDYHrtoEZ6YULSE31scnFso`
