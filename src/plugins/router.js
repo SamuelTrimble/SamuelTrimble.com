@@ -36,4 +36,12 @@ const router = new VueRouter({
 	]
 });
 
+router.afterEach((to/*, from*/) => {
+	window.gtag('config', process.env.VUE_APP_GAID, {
+		'page_title' : to.name,
+		'page_location' : to.fullPath,
+		'page_path' : to.path
+	});
+});
+
 export default router;
