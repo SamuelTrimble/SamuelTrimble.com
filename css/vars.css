@@ -1,0 +1,52 @@
+:root {
+	--color-bg:            #EEF1F6;
+	--color-bg-2:          #AFBFD9;
+	--bg-gradient:         linear-gradient(to bottom, #eef1f6, #dee4ef, #ced8e7, #bfcbe0, #afbfd9);
+	--color-surface:       #F5F5F5;
+	--color-surface-2:     #F7F8FB;
+	--color-ink:           #101828;
+	--color-deep:          #0B1120;
+	--color-text-body:     #3D4759;
+	--color-text-muted:    #6B7688;
+	--color-accent:        #3355E0;
+	--color-accent-press:  #2843C4;
+	--color-accent-soft:   rgba(51,85,224,.08);
+	--color-accent-edge:   rgba(51,85,224,.5);
+	--color-line-faint:    rgba(18,24,38,.06);
+	--color-line:          rgba(18,24,38,.10);
+	--color-line-strong:   rgba(18,24,38,.16);
+
+	--font-heading:  'DM Sans', sans-serif, system-ui;
+	--font-body:     'Poppins', sans-serif, system-ui;
+	--font-mono:     'DM Mono', monospace, ui-monospace;
+
+	--r-btn: 6px;
+	--r-card: 12px;
+	--r-pill: 28px;
+
+	--shadow-float: 0 8px 24px rgba(16,24,40,.10), 0 1px 2px rgba(16,24,40,.06);
+
+	--float-x: 0;
+	--float-y: 0;
+
+	--animation-easing: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+[data-theme="dark"] {
+	--color-bg:            #0F131C;
+	--color-bg-2:          #1E2B4A;
+	--bg-gradient:         linear-gradient(to bottom, #0f131c, #131927, #161f32, #1a253e, #1e2b4a);
+	--color-surface:       #171C28;
+	--color-surface-2:     #171C28;
+	--color-ink:           #E9ECF3;
+	--color-deep:          #0B1120;
+	--color-text-body:     #A6AEC0;
+	--color-text-muted:    #6F7A90;
+	--color-accent:        #7D95F5;
+	--color-accent-soft:   rgba(125,149,245,.14);
+	--color-line-faint:    rgba(255,255,255,.06);
+	--color-line:          rgba(255,255,255,.09);
+	--color-line-strong:   rgba(255,255,255,.16);
+
+	--shadow-float:  0 8px 24px rgba(0,0,0,.35);
+}

@@ -1,13 +1,13 @@
 <svg version="1.1" id="HexLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#262626;}
+	.st0{fill:#3355E0;}
 	.st1{fill:#F5F5F5;}
 </style>
 <g>
 	<path class="st0" d="M49.5,0l42,25.3v49.5l-42,25.3l-42-25.3V25.3L49.5,0z"/>
 </g>
 <defs><path id="s-mark" d="M42 210H224Q228 171 251.0 150.5Q274 130 311 130Q349 130 371.0 147.5Q393 165 393 196Q393 222 375.5 239.0Q358 256 332.5 267.0Q307 278 260 292Q192 313 149.0 334.0Q106 355 75.0 396.0Q44 437 44 503Q44 601 115.0 656.5Q186 712 300 712Q416 712 487.0 656.5Q558 601 563 502H378Q376 536 353.0 555.5Q330 575 294 575Q263 575 244.0 558.5Q225 542 225 511Q225 477 257.0 458.0Q289 439 357 417Q425 394 467.5 373.0Q510 352 541.0 312.0Q572 272 572 209Q572 149 541.5 100.0Q511 51 453.0 22.0Q395 -7 316 -7Q239 -7 178.0 18.0Q117 43 80.5 92.0Q44 141 42 210Z"/></defs>
-<use xlink:href="#s-mark" class="st1" transform="translate(47.700,50.050) scale(0.06000,-0.06000) translate(-307.0,-352.5)"/>
-<use xlink:href="#s-mark" class="st1" transform="translate(51.300,50.050) scale(-0.06000,-0.06000) translate(-307.0,-352.5)"/>
+<use xlink:href="#s-mark" class="st1" transform="translate(39.900,50.050) scale(0.06000,-0.06000) translate(-307.0,-352.5)"/>
+<use xlink:href="#s-mark" class="st1" transform="translate(59.100,50.050) scale(-0.06000,-0.06000) translate(-307.0,-352.5)"/>
 </svg>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<script>
+	(function () {
+		var stored = localStorage.getItem('theme');
+		var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+		if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+	}());
+	</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Samuel Trimble</title>
+
+	<link rel="icon" type="image/svg+xml" href="assets/images/SLT.svg">
+
+	<link rel="stylesheet" href="css/vars.css">
+	<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+	<div id="bg-gradient"></div>
+	<header id="site-header">
+		<div class="mobile-header-pill hide-not-mobile">
+			<div class="logo" aria-label="Samuel Trimble logo">
+				<img src="assets/images/SLT.svg" class="svg-embed" />
+				<span class="wordmark">Samuel Trimble</span>
+			</div>
+
+			<button type="button" class="nav-link theme-toggle" aria-label="Toggle theme - mobile" aria-pressed="false">
+				<img class="svg-embed theme-icon-sun" src="assets/images/weather-sunny.svg" />
+				<img class="svg-embed theme-icon-moon" src="assets/images/weather-night.svg" />
+				<div class="nav-link-text">Toggle theme</div>
+			</button>
+		</div>
+		<nav class="nav-pill" aria-label="Primary">
+			<div class="logo hide-mobile" aria-label="Samuel Trimble logo">
+				<img src="assets/images/SLT.svg" class="svg-embed" />
+				<span class="wordmark">Samuel Trimble</span>
+			</div>
+
+			<span class="nav-seperator hide-mobile" aria-hidden="true"></span>
+
+			<div id="nav-links">
+				<button type="button" class="nav-link" href="#projects" aria-label="Projects">
+					<img class="svg-embed" src="assets/images/folder-multiple-outline.svg" />
+					<div class="nav-link-text">Projects</div>
+				</button>
+				<button type="button" class="nav-link" href="#experience" aria-label="Experience">
+					<img class="svg-embed" src="assets/images/timeline-clock-outline.svg" />
+					<div class="nav-link-text">Experience</div>
+				</button>
+				<button type="button" class="nav-link" href="#stack" aria-label="Stack">
+					<img class="svg-embed" src="assets/images/toolbox-outline.svg" />
+					<div class="nav-link-text">Stack</div>
+				</button>
+				<button type="button" class="nav-link" href="#recommendations" aria-label="Recommendations">
+					<img class="svg-embed" src="assets/images/account-check-outline.svg" />
+					<div class="nav-link-text">Recommendations</div>
+				</button>
+				<button type="button" class="nav-link" href="#contact" aria-label="Contact">
+					<img class="svg-embed" src="assets/images/message-text-outline.svg" />
+					<div class="nav-link-text">Contact</div>
+				</button>
+			</div>
+
+			<span class="nav-seperator hide-mobile" aria-hidden="true"></span>
+
+			<button type="button" class="nav-link theme-toggle hide-mobile" aria-label="Toggle theme - desktop" aria-pressed="false">
+				<img class="svg-embed theme-icon-sun" src="assets/images/weather-sunny.svg" />
+				<img class="svg-embed theme-icon-moon" src="assets/images/weather-night.svg" />
+				<div class="nav-link-text">Toggle theme</div>
+			</button>
+		</nav>
+	</header>
+
+	<main>
+		<section id="home" class="container hero">
+			<div class="col-100-sm col-50-md">
+				<h1 class="content-show" style="animation-delay:400ms">Senior Full Stack Engineer</h1>
+				<h2 class="content-show" style="animation-delay:600ms">20+ years of shipping software, and still "making things better".</h2>
+				<p class="content-show" style="animation-delay:800ms">C# / .NET Core / Azure / SQL Server / MongoDB / Vue / Node / Express / Electron</p>
+				<p class="content-show" style="animation-delay:800ms">I architect and ship production web & desktop applications for clients like Microsoft, Xbox Game Studios, Mastercard, PACCAR, and STCU while endeavoring to continuously "make things better".</p>
+			</div>
+			<div class="col-50-md hide-mobile">
+				<img id="profile-photo" class="content-show" style="animation-delay:1200ms" src="assets/images/profile-hex.png" alt="Profile photo" />
+			</div>
+		</section>
+
+		<section id="projects" class="section">
+			<h2>Projects</h2>
+		</section>
+
+		<section id="experience" class="section">
+			<h2>Experience</h2>
+		</section>
+
+		<section id="stack" class="section">
+			<h2>Stack</h2>
+		</section>
+
+		<section id="recommendations" class="section">
+			<h2>Recommendations</h2>
+		</section>
+
+		<section id="contact" class="section">
+			<h2>Contact</h2>
+		</section>
+	</main>
+
+	<footer id="site-footer">
+		<p>&copy;<span id="year"></span> Samuel Trimble</p>
+	</footer>
+
+	<script src="js/site.js"></script>
+</body>
+</html>
